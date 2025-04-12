@@ -23,7 +23,13 @@ export const Contact = () => {
       )
       .then((result) => {
         alert("Message Sent!");
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setFormData({
+          ...formData,
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
       })
       .catch(() => alert("Oops! Something went wrong. Please try again."));
   };
@@ -39,6 +45,13 @@ export const Contact = () => {
             Get In Touch
           </h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
+            {/* Hidden element for bcc to myself */}
+            <input
+              type="hidden"
+              name="bcc"
+              value="kriteshpokharel100@gmail.com"
+            />
+
             <div className="relative">
               <input
                 type="text"
