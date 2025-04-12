@@ -40,7 +40,7 @@ npm install
 Now, you can start the development server to view the website locally:
 
 ```bash
-npm dev
+npm run dev
 ```
 
 This will start a local server at [http://localhost:5173](http://localhost:5173). Open that link in your browser to see the portfolio in action.
