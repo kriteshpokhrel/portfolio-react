@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "emailjs-com";
-import { Github, Linkedin, Facebook, Instagram } from "lucide-react"; // Social Media Icons
+import { Github, Linkedin, Facebook, Instagram } from "lucide-react";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +10,8 @@ export const Contact = () => {
     subject: "",
     message: "",
   });
+
+  const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,17 +23,28 @@ export const Contact = () => {
         e.target,
         import.meta.env.VITE_PUBLIC_KEY
       )
-      .then((result) => {
-        alert("Message Sent!");
+      .then(() => {
+        setStatusMessage({
+          type: "success",
+          text: "✅ Message sent successfully!",
+        });
         setFormData({
-          ...formData,
           name: "",
           email: "",
           subject: "",
           message: "",
         });
+
+        setTimeout(() => setStatusMessage({ type: "", text: "" }), 5000);
       })
-      .catch(() => alert("Oops! Something went wrong. Please try again."));
+      .catch(() => {
+        setStatusMessage({
+          type: "error",
+          text: "❌ Oops! Something went wrong. Please try again.",
+        });
+
+        setTimeout(() => setStatusMessage({ type: "", text: "" }), 5000);
+      });
   };
 
   return (
@@ -44,14 +57,28 @@ export const Contact = () => {
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
             Get In Touch
           </h2>
+
+          {/* ✉️ Status Message */}
+          {statusMessage.text && (
+            <div
+              className={`mb-6 px-4 py-3 rounded text-sm text-center transition duration-300 ${
+                statusMessage.type === "success"
+                  ? "bg-green-500/10 text-green-400 border border-green-500/20"
+                  : "bg-red-500/10 text-red-400 border border-red-500/20"
+              }`}
+            >
+              {statusMessage.text}
+            </div>
+          )}
+
           <form className="space-y-6" onSubmit={handleSubmit}>
-            {/* Hidden element for bcc to myself */}
             <input
               type="hidden"
               name="bcc"
               value="kriteshpokharel100@gmail.com"
             />
 
+            {/* Name Input */}
             <div className="relative">
               <input
                 type="text"
@@ -67,6 +94,7 @@ export const Contact = () => {
               />
             </div>
 
+            {/* Email Input */}
             <div className="relative">
               <input
                 type="email"
@@ -82,6 +110,7 @@ export const Contact = () => {
               />
             </div>
 
+            {/* Subject Input */}
             <div className="relative">
               <input
                 type="text"
@@ -97,6 +126,7 @@ export const Contact = () => {
               />
             </div>
 
+            {/* Message Box */}
             <div className="relative">
               <textarea
                 id="message"
@@ -112,6 +142,7 @@ export const Contact = () => {
               />
             </div>
 
+            {/* Submit Button */}
             <button
               type="submit"
               className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] cursor-pointer"
@@ -120,7 +151,7 @@ export const Contact = () => {
             </button>
           </form>
 
-          {/* 🌐 Social Media Links */}
+          {/* 🌐 Social Links */}
           <div className="mt-10 flex justify-center gap-6">
             <a
               href="https://github.com/kriteshpokhrel"
