@@ -7,9 +7,9 @@ export const Home = () => {
       className="min-h-screen flex items-center justify-center relative px-4"
     >
       <RevealOnScroll>
-        <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto">
           {/* Text Section */}
-          <div className="text-center z-10 flex-1 pl-[100px]">
+          <div className="text-center z-10 flex-1 md:pl-[100px] order-2 md:order-1">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-tight">
               Hi, I'm Kritesh Pokhrel
             </h1>
@@ -38,9 +38,9 @@ export const Home = () => {
           </div>
 
           {/* Image Section */}
-          <div className="flex-1 flex justify-center">
+          <div className="flex-1 flex justify-center mb-8 md:mb-0 order-1 md:order-2">
             <img
-              src="/kritesh.jpg" // Path to image in public folder
+              src="/kritesh.jpg"
               alt="Kritesh Pokhrel"
               className="w-48 h-48 md:w-90 md:h-90 rounded-full object-cover shadow-lg"
             />
