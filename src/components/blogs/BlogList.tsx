@@ -10,9 +10,10 @@ export default function BlogList() {
 
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-base sm:text-sm md:text-base font-semibold mb-1 text-white line-clamp-2">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight pb-2">
             Blog Space
-          </h2>
+          </h1>
+
           <p className="text-neutral-400 text-lg max-w-3xl mx-auto">
             I write about ideas, insights, and anything that sparks my curiosity.
           </p>
