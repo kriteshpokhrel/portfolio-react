@@ -28,17 +28,17 @@ export default function BlogPostPage() {
   return (
     <div className="min-h-screen bg-neutral-900 flex justify-center py-20">
       <article
-        className="w-full max-w-6xl bg-neutral-800 rounded-xl shadow-xl p-12 markdown-body"
+        className="w-full max-w-6xl bg-neutral-800 rounded-xl shadow-xl markdown-body p-4 sm:p-6 md:p-10 lg:p-12"
         style={{
-          padding: "3rem",
           borderRadius: "1rem",
           lineHeight: "1.75",
         }}
       >
+
         {/* Go Back Button */}
         <button
           onClick={() => navigate("/blogs")}
-          className="mb-6 px-5 py-2 rounded-lg bg-neutral-700 hover:bg-neutral-600 text-white font-semibold flex items-center gap-2 transition-all duration-200 shadow-md hover:shadow-lg"
+          className="mb-6 px-4 py-2 text-sm rounded-lg bg-neutral-700 hover:bg-neutral-600 text-white font-semibold flex items-center gap-2 transition-all duration-200 shadow-md hover:shadow-lg"
           style={{
             backdropFilter: "blur(6px)",
             border: "1px solid rgba(255,255,255,0.1)",

@@ -4,7 +4,7 @@ export const Introduction = () => {
     return (
         <section
             id="home"
-            className="min-h-screen flex items-center justify-center relative px-4"
+            className="min-h-screen flex items-center justify-center relative px-4 py-20"
         >
             <RevealOnScroll>
                 <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto">
