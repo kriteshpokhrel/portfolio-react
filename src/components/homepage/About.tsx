@@ -2,7 +2,7 @@ import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
   const frontendSkills = ["Angular", "Redux", "PWA", "TypeScript"];
-  const eurofinsTechnologies = ["Angular", "C#", "TypeScript", "ASP .Net", "Redux", "Jasmine & Karma", "Service Worker", "Azure", "Octopus Deploy", "Grafana" ];
+  const eurofinsTechnologies = ["Angular", "C#", "TypeScript", "ASP .Net", "Redux", "Jasmine & Karma", "Service Worker", "Azure", "Octopus Deploy", "Grafana"];
   const additionalSkills = [
     "React",
     "Next.js",
@@ -15,7 +15,7 @@ export const About = () => {
     "Data Visualization",
     "SpecFlow",
     'Grafana',
-  ];  
+  ];
 
   const backendSkills = [
     "C#",
