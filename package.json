@@ -12,12 +12,32 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.0.0",
     "emailjs-com": "^3.2.0",
+    "front-matter": "^4.0.2",
+    "github-markdown-css": "^5.8.1",
     "lucide-react": "^0.487.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-abbr": "^2.0.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-container": "^4.0.0",
+    "markdown-it-deflist": "^3.0.0",
+    "markdown-it-emoji": "^3.0.0",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-github-headings": "^2.0.1",
+    "markdown-it-ins": "^4.0.0",
+    "markdown-it-link-attributes": "^4.0.1",
+    "markdown-it-mark": "^4.0.0",
+    "markdown-it-sub": "^2.0.0",
+    "markdown-it-sup": "^2.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwindcss": "^4.0.0"
+    "react-router-dom": "^7.10.1",
+    "react-syntax-highlighter": "^16.1.0",
+    "react-toggle": "^4.1.3",
+    "tailwindcss": "^4.0.0",
+    "zod": "^4.1.13"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
