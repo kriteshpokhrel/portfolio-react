@@ -9,6 +9,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
 
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const isBlogs = /^\/blogs(\/.*)?$/.test(location.pathname);
 
   return (
     <nav className="fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
@@ -20,25 +21,32 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             kritesh<span className="text-blue-500">.pokhrel</span>
           </Link>
 
-          {/* Mobile Menu Icon */}
-          {isHome && <div
-            className="text-2xl w-7 h-10 relative cursor-pointer z-40 md:hidden"
-            onClick={() => setMenuOpen((prev) => !prev)}
-          >
-            &#9776;
-          </div>}
-
+          {/* Mobile Menu Icon (only on home) */}
           {isHome && (
-            <>
-              {/* Desktop Menu */}
-              <div className="hidden md:flex items-center space-x-8">
-                {renderNavLinks({ className: "text-gray-300 hover:text-white" })}
-              </div>
-            </>
+            <div
+              className="text-2xl w-7 h-10 relative cursor-pointer z-40 md:hidden"
+              onClick={() => setMenuOpen((prev) => !prev)}
+            >
+              &#9776;
+            </div>
           )}
-        </div>
 
+          {/* Desktop Menu */}
+          {isHome && (
+            <div className="hidden md:flex items-center space-x-8">
+              {renderNavLinks({ className: "text-gray-300 hover:text-white" })}
+            </div>
+          )}
+
+          {/* Blogs Page Home Button */}
+          {isBlogs && (
+            <div className="flex items-center">
+              <Link to="/">Home</Link>
+            </div>
+          )}
+
+        </div>
       </div>
-    </nav >
+    </nav>
   );
 };
