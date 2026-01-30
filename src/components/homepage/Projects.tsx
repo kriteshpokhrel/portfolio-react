@@ -9,20 +9,6 @@ const projects: Project[] = [
     link: "https://github.com/notyetgrounded/FlightBooking",
   },
   {
-    title: "SEVA: Secure E-Voting Application",
-    description:
-      "Blockchain-based e-voting system ensuring secure, anonymous, and tamper-proof voting using Ethereum and Machine Learning.",
-    techStack: ["React", "Node.js", "Ethereum", "Solidity", "Truffle", "Ganache"],
-    link: "https://github.com/kriteshpokhrel/SEVA-Secure_E-Voting_Appliacation",
-  },
-  {
-    title: "VisionEd",
-    description:
-      "Android assistant for visually impaired users providing communication, multimedia, and safety features.",
-    techStack: ["Java", "Android Studio", "Google Text-to-Speech", "Firebase"],
-    link: "https://github.com/kriteshpokhrel/VisionEd",
-  },
-  {
     title: "SearchTap",
     description:
       "Kid-safe search engine using NLP and keyword filtering to block inappropriate content.",
@@ -35,6 +21,18 @@ const projects: Project[] = [
       "Education management platform integrating student records, image recognition, and DBMS principles.",
     techStack: ["Python", "OpenCV", "SQLite", "Tkinter"],
     link: "https://github.com/kriteshpokhrel/DigiCollege",
+  },
+  {
+    title: "SEVA: Secure E-Voting Application",
+    description:
+      "Blockchain-based e-voting system ensuring secure, anonymous, and tamper-proof voting using Ethereum and Machine Learning.",
+    techStack: ["React", "Node.js", "Ethereum", "Solidity", "Truffle", "Ganache"],
+  },
+  {
+    title: "VisionEd",
+    description:
+      "Android assistant for visually impaired users providing communication, multimedia, and safety features.",
+    techStack: ["Java", "Android Studio", "Google Text-to-Speech", "Firebase"],
   },
 ];
 
@@ -54,13 +52,13 @@ const ProjectCard = ({ project }: { project: Project }) => (
       ))}
     </div>
     <div className="flex justify-between items-center">
-      <a
+      {project.link && (<a
         href={project.link}
         target="_blank"
         className="text-blue-400 hover:text-blue-300 transition-colors my-4"
       >
-        View Project →
-      </a>
+        View Repo →
+      </a>)}
     </div>
   </div>
 );
