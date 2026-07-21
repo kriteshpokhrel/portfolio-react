@@ -25,10 +25,10 @@ export default function BlogCard({ post }: any) {
         {/* Hover overlay: blur + tint */}
         {post.meta.excerpt && (
           <div className="
-            absolute inset-0 
-            bg-black bg-opacity-50 
+            absolute inset-0
+            bg-black bg-opacity-50
             backdrop-blur-sm
-            opacity-0 group-hover:opacity-90 
+            opacity-0 group-hover:opacity-90
             transition-opacity duration-300
             flex items-center justify-center p-4
           ">

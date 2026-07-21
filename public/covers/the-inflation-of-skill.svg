@@ -1,0 +1,53 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Why knowing why matters more than ever">
+  <defs>
+    <radialGradient id="paper" cx="38%" cy="32%" r="85%">
+      <stop offset="0%" stop-color="#f7efe1"/>
+      <stop offset="60%" stop-color="#efe3ce"/>
+      <stop offset="100%" stop-color="#e4d4b8"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c2410c"/>
+      <stop offset="55%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#paper)"/>
+
+  <!-- engraved ledger lines (paper-money texture) -->
+  <g stroke="#8a6d3b" stroke-opacity="0.10" stroke-width="1.5">
+    <line x1="0" y1="235" x2="800" y2="235"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+    <line x1="0" y1="565" x2="800" y2="565"/>
+  </g>
+
+  <!-- ornamental frame -->
+  <rect x="60" y="60" width="680" height="680" fill="none" stroke="#a8804a" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="74" y="74" width="652" height="652" fill="none" stroke="#a8804a" stroke-opacity="0.18" stroke-width="1"/>
+
+  <!-- rising value curve behind the glyph (understanding appreciates) -->
+  <path d="M150 610 C 300 600, 360 520, 470 430 S 620 250, 660 200"
+        fill="none" stroke="#c2410c" stroke-opacity="0.28" stroke-width="6"
+        stroke-linecap="round" stroke-dasharray="1 16"/>
+  <g fill="#c2410c" fill-opacity="0.5">
+    <circle cx="150" cy="610" r="6"/>
+    <circle cx="340" cy="540" r="6"/>
+    <circle cx="500" cy="400" r="6"/>
+  </g>
+
+  <!-- the hero: a question mark as the scarce, appreciating asset -->
+  <text x="405" y="530" font-family="Georgia, 'Times New Roman', serif" font-size="440"
+        font-weight="700" fill="url(#gold)" text-anchor="middle">?</text>
+
+  <!-- small coin at the base (cheap, abundant) -->
+  <g transform="translate(150 610)">
+    <circle r="16" fill="none" stroke="#a8804a" stroke-width="3" stroke-opacity="0.6"/>
+    <circle r="8" fill="none" stroke="#a8804a" stroke-width="2" stroke-opacity="0.6"/>
+  </g>
+
+  <!-- labels -->
+  <text x="90" y="130" font-family="Georgia, 'Times New Roman', serif" font-size="19" letter-spacing="3" fill="#7c5a2e">CHEAP CODE</text>
+  <text x="710" y="130" font-family="Georgia, 'Times New Roman', serif" font-size="19" letter-spacing="3" fill="#7c5a2e" text-anchor="end">SCARCE WHY</text>
+  <text x="400" y="695" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-style="italic" letter-spacing="1" fill="#5c4626" text-anchor="middle">understanding is the appreciating asset</text>
+</svg>

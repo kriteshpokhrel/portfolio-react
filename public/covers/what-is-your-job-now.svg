@@ -1,0 +1,72 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What is your job now — steering, not typing">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="44%" r="80%">
+      <stop offset="0%" stop-color="#1f1f1f"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#ffffff" opacity="0.04"/>
+    </pattern>
+    <radialGradient id="vig" cx="50%" cy="50%" r="62%">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.5"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect width="1280" height="720" fill="url(#dots)"/>
+  <rect width="1280" height="720" fill="url(#vig)"/>
+
+  <!-- faint concentric rings (bleed into the banner sides) -->
+  <circle cx="640" cy="360" r="250" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="2"/>
+  <circle cx="640" cy="360" r="320" fill="none" stroke="#ffffff" stroke-opacity="0.025" stroke-width="2"/>
+
+  <!-- helm spokes -->
+  <g stroke="#3f3f46" stroke-width="6" stroke-linecap="round">
+    <line x1="674" y1="360" x2="800" y2="360"/>
+    <line x1="664" y1="384" x2="753" y2="473"/>
+    <line x1="640" y1="394" x2="640" y2="520"/>
+    <line x1="616" y1="384" x2="527" y2="473"/>
+    <line x1="606" y1="360" x2="480" y2="360"/>
+    <line x1="616" y1="336" x2="527" y2="247"/>
+    <line x1="640" y1="326" x2="640" y2="200"/>
+    <line x1="664" y1="336" x2="753" y2="247"/>
+  </g>
+  <g stroke="url(#accent)" stroke-width="6" stroke-linecap="round">
+    <line x1="640" y1="326" x2="640" y2="200"/>
+    <line x1="664" y1="384" x2="753" y2="473"/>
+  </g>
+
+  <!-- helm ring -->
+  <circle cx="640" cy="360" r="160" fill="none" stroke="url(#accent)" stroke-width="8"/>
+
+  <!-- knobs -->
+  <g fill="#52525b">
+    <circle cx="816" cy="360" r="9"/>
+    <circle cx="764" cy="485" r="9"/>
+    <circle cx="640" cy="536" r="9"/>
+    <circle cx="516" cy="485" r="9"/>
+    <circle cx="464" cy="360" r="9"/>
+    <circle cx="516" cy="235" r="9"/>
+    <circle cx="764" cy="235" r="9"/>
+  </g>
+  <circle cx="640" cy="184" r="9" fill="#22d3ee"/>
+
+  <!-- hub -->
+  <circle cx="640" cy="360" r="34" fill="#0d1b2a" stroke="#3f3f46" stroke-width="3"/>
+
+  <!-- pilot -->
+  <g>
+    <circle cx="640" cy="348" r="12" fill="#e5e7eb"/>
+    <path d="M622 384 C 625 366, 655 366, 658 384 Z" fill="none" stroke="#e5e7eb" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+
+  <!-- labels -->
+  <text x="330" y="120" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" letter-spacing="4" fill="#71717a">NOT TYPING</text>
+  <text x="950" y="120" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" letter-spacing="4" fill="#71717a" text-anchor="end">STEERING</text>
+  <text x="640" y="662" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" letter-spacing="3" fill="#e5e7eb" text-anchor="middle">TASTE · JUDGMENT · ORCHESTRATION</text>
+</svg>

@@ -1,0 +1,72 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Humans as the bottleneck">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="44%" r="80%">
+      <stop offset="0%" stop-color="#1f1f1f"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#ffffff" opacity="0.04"/>
+    </pattern>
+    <radialGradient id="vig" cx="50%" cy="50%" r="62%">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.5"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect width="1280" height="720" fill="url(#dots)"/>
+  <rect width="1280" height="720" fill="url(#vig)"/>
+
+  <!-- inbound streams -->
+  <g stroke="#3f3f46" stroke-width="6" stroke-linecap="round" fill="none">
+    <path d="M210 150 C 430 200, 470 320, 600 352"/>
+    <path d="M210 230 C 430 262, 470 336, 600 356"/>
+    <path d="M210 310 C 420 330, 470 350, 600 360"/>
+    <path d="M210 390 C 420 392, 470 375, 600 368"/>
+    <path d="M210 470 C 430 452, 470 396, 600 366"/>
+    <path d="M210 550 C 430 512, 470 412, 600 372"/>
+  </g>
+  <g stroke="url(#accent)" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9">
+    <path d="M210 190 C 430 232, 470 330, 600 354"/>
+    <path d="M210 350 C 420 360, 470 362, 600 362"/>
+    <path d="M210 510 C 430 486, 470 404, 600 370"/>
+  </g>
+
+  <!-- inbound dots -->
+  <g fill="#52525b">
+    <circle cx="210" cy="150" r="7"/><circle cx="210" cy="230" r="7"/>
+    <circle cx="210" cy="310" r="7"/><circle cx="210" cy="390" r="7"/>
+    <circle cx="210" cy="470" r="7"/><circle cx="210" cy="550" r="7"/>
+  </g>
+  <g fill="#22d3ee">
+    <circle cx="210" cy="190" r="7"/><circle cx="210" cy="350" r="7"/><circle cx="210" cy="510" r="7"/>
+  </g>
+
+  <!-- gate line -->
+  <line x1="668" y1="290" x2="668" y2="430" stroke="#3f3f46" stroke-width="3" opacity="0.5"/>
+
+  <!-- human gate -->
+  <g>
+    <circle cx="640" cy="338" r="26" fill="none" stroke="url(#accent)" stroke-width="6"/>
+    <path d="M602 408 C 606 376, 674 376, 678 408 L 678 430 C 640 438, 640 438, 602 430 Z"
+          fill="none" stroke="url(#accent)" stroke-width="6" stroke-linejoin="round"/>
+  </g>
+
+  <!-- outbound -->
+  <g stroke-linecap="round" fill="none">
+    <path d="M680 380 C 830 385, 920 382, 1070 380" stroke="url(#accent)" stroke-width="6"/>
+    <path d="M672 425 C 830 452, 920 458, 1060 460" stroke="#3f3f46" stroke-width="5"/>
+    <path d="M672 335 C 830 320, 920 315, 1060 312" stroke="#3f3f46" stroke-width="5"/>
+  </g>
+  <g fill="#22d3ee"><circle cx="1070" cy="380" r="7"/></g>
+  <g fill="#52525b"><circle cx="1060" cy="460" r="7"/><circle cx="1060" cy="312" r="7"/></g>
+
+  <!-- labels -->
+  <text x="330" y="120" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" letter-spacing="4" fill="#71717a">MANY PRs</text>
+  <text x="950" y="120" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" letter-spacing="4" fill="#71717a" text-anchor="end">FEWER</text>
+  <text x="640" y="655" font-family="ui-sans-serif, system-ui, sans-serif" font-size="24" letter-spacing="4" fill="#e5e7eb" text-anchor="middle">THE HUMAN BOTTLENECK</text>
+</svg>
