@@ -28,9 +28,8 @@ export default function BlogPostPage() {
   return (
     <div className="min-h-screen bg-neutral-900 flex justify-center py-20">
       <article
-        className="w-full max-w-6xl bg-neutral-800 rounded-xl shadow-xl markdown-body p-4 sm:p-6 md:p-10 lg:p-12"
+        className="w-full max-w-6xl bg-neutral-800/70 border border-white/10 rounded-2xl shadow-2xl shadow-black/30 markdown-body p-4 sm:p-6 md:p-10 lg:p-12"
         style={{
-          borderRadius: "1rem",
           lineHeight: "1.75",
         }}
       >
