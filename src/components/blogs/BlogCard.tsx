@@ -5,11 +5,11 @@ export default function BlogCard({ post }: any) {
     <Link
       to={`/blogs/${post.slug}`}
       className="
-        relative block rounded-xl overflow-hidden 
-        bg-[#1f1f1f] 
-        border border-neutral-800 
-        hover:border-neutral-600 
-        hover:shadow-lg 
+        relative flex flex-col h-full rounded-xl overflow-hidden
+        bg-[#1f1f1f]
+        border border-neutral-800
+        hover:border-blue-500/50
+        hover:shadow-lg hover:shadow-blue-500/10
         transition
         group
       "
@@ -40,12 +40,16 @@ export default function BlogCard({ post }: any) {
       </div>
 
       {/* Text */}
-      <div className="p-3">
-        <h2 className="text-base font-semibold mb-1 text-white line-clamp-2">
+      <div className="p-3 flex flex-col flex-1">
+        <h2 className="text-base font-semibold mb-1 text-white line-clamp-2 min-h-[3rem]">
           {post.meta.title}
         </h2>
-        <p className="text-sm text-neutral-400">
-          {new Date(post.meta.date).toDateString()}
+        <p className="text-sm text-neutral-400 mt-auto">
+          {new Date(post.meta.date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })}
         </p>
       </div>
     </Link>

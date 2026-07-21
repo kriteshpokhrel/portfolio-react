@@ -27,7 +27,7 @@ export default function BlogList() {
           {posts.map((post: any) => (
             <div
               key={post.slug}
-              className="transition-all duration-300 hover:scale-105 hover:translate-y-[-4px]"
+              className="h-full transition-transform duration-300 hover:-translate-y-1"
             >
               <BlogCard post={post} />
             </div>
