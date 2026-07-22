@@ -90,7 +90,7 @@ export default function BlogPostPage() {
               src={post.meta.coverImage}
               alt={post.meta.title}
               style={{
-                maxWidth: "100%",
+                maxWidth: "min(100%, 44rem)",
                 borderRadius: "0.75rem",
                 boxShadow: "0 8px 20px rgba(0,0,0,0.5)",
               }}
