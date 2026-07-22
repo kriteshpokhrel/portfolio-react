@@ -1,18 +1,18 @@
 ---
 title: "Part 4 · What the New Development Process Looks Like"
-date: "2026-07-02"
+date: "2026-07-03"
 excerpt: "There is a diagram going around that shows the software lifecycle before and after AI. The coding block — once the biggest part of the process — collapses into a compressed, parallel step, while problem framing and validation grow to take its place. The shape of the work is changing."
 coverImage: "/covers/new-development-process.svg"
 ---
 ***
 
-*Part 4 of **Fast Code, Slow Engineering**, a short series on what AI agents are actually speeding up — and what they aren't.*
+*Part 4 of **AI, As I See It**, a personal series on what AI agents are really changing about how we build software — and what they aren't.*
 
-> There is a diagram from axify comparing the software development lifecycle before and after AI, by how time is *allocated* across it. It captures the shift this whole series has been circling better than a paragraph can, so I want to sit with it for a moment.
+> There is a diagram comparing the software development lifecycle before and after AI, by how time is *allocated* across it. It captures the shift this whole series has been circling better than a paragraph can, so I want to sit with it for a moment.
 
 ## The Old Shape
 
-In the traditional lifecycle, the blocks are lopsided in a familiar way. Requirements and design are modest. Testing, validation, and deploy are modest. And sitting in the middle, dwarfing everything around it, is **coding**. Most of the time is spent writing code.
+When I picture the traditional lifecycle, the blocks are lopsided in a way that feels familiar to me. Requirements and design are modest. Testing, validation, and deploy are modest. And sitting in the middle, dwarfing everything around it, is **coding**. Most of the time is spent writing code.
 
 That shape is so ingrained that we built our entire sense of "productivity" around it. Faster typing, better autocomplete, more lines per day. If coding is the biggest block, shrinking it feels like the obvious win.
 
@@ -32,7 +32,7 @@ This is genuinely faster. But notice what it does — it takes the part of the p
 
 ## Why the Bookends Grow
 
-This is not an accident, and it is not overhead. It is where the engineering moved.
+This is not an accident, and it is not overhead. It took me a while to see it, but this is where the engineering moved.
 
 **Problem framing grows** because a fast agent pointed at a poorly-framed problem just produces the wrong thing faster. The value of getting the problem right goes up precisely when execution gets cheap.
 
@@ -45,5 +45,3 @@ If this is the shape of things, then "getting faster at coding" is optimizing th
 None of this is a demotion of engineering. It is a relocation of it. The work did not shrink — it moved to the parts of the process that were always the hardest to automate, because they were never really about the code.
 
 ---
-
-> 🚧 This post is still being written. Thoughts here are genuine but unfinished, much like the ecosystem it is describing.
