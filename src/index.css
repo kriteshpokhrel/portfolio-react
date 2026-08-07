@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+  /* Offset anchor jumps so section headings clear the fixed navbar. */
+  scroll-padding-top: 5rem;
+}
+
 html,
 body {
   margin: 0;
@@ -7,6 +13,12 @@ body {
   font-family: "Space Grotesk", sans-serif;
   background: #0a0a0a;
   color: #f3f4f6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 @layer utilities {
@@ -46,6 +58,11 @@ body {
   margin-right: auto;
   max-width: min(100%, 40rem);
   height: auto;
+}
+
+/* Offset heading anchor jumps (TOC links) below the fixed navbar. */
+.markdown-body :is(h1, h2, h3, h4, h5, h6) {
+  scroll-margin-top: 5rem;
 }
 
 .reveal {

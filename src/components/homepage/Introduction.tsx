@@ -40,7 +40,7 @@ export const Introduction = () => {
                                 to="/blogs"
                                 className="border border-cyan-400/50 text-cyan-400 py-2 px-4 sm:py-3 sm:px-6 rounded font-medium text-sm sm:text-base transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] hover:bg-cyan-400/10"
                             >
-                                Read my stuffs ✍️
+                                Read my writing ✍️
                             </Link>
                         </div>
 
@@ -51,6 +51,8 @@ export const Introduction = () => {
                         <img
                             src="/kritesh.jpg"
                             alt="Kritesh Pokhrel"
+                            width={360}
+                            height={360}
                             className="w-48 h-48 md:w-90 md:h-90 rounded-full object-cover shadow-lg"
                         />
                     </div>

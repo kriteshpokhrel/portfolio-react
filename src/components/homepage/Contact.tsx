@@ -12,9 +12,11 @@ export const Contact = () => {
   });
 
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
+  const [isSending, setIsSending] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSending(true);
 
     emailjs
       .sendForm(
@@ -44,7 +46,8 @@ export const Contact = () => {
         });
 
         setTimeout(() => setStatusMessage({ type: "", text: "" }), 5000);
-      });
+      })
+      .finally(() => setIsSending(false));
   };
 
   return (
@@ -79,6 +82,7 @@ export const Contact = () => {
 
             {/* Name Input */}
             <div className="relative">
+              <label htmlFor="name" className="sr-only">Name</label>
               <input
                 type="text"
                 id="name"
@@ -95,6 +99,7 @@ export const Contact = () => {
 
             {/* Email Input */}
             <div className="relative">
+              <label htmlFor="email" className="sr-only">Email</label>
               <input
                 type="email"
                 id="email"
@@ -111,6 +116,7 @@ export const Contact = () => {
 
             {/* Subject Input */}
             <div className="relative">
+              <label htmlFor="subject" className="sr-only">Subject</label>
               <input
                 type="text"
                 id="subject"
@@ -127,6 +133,7 @@ export const Contact = () => {
 
             {/* Message Box */}
             <div className="relative">
+              <label htmlFor="message" className="sr-only">Message</label>
               <textarea
                 id="message"
                 name="message"
@@ -144,9 +151,10 @@ export const Contact = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] cursor-pointer"
+              disabled={isSending}
+              className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
             >
-              Send Message
+              {isSending ? "Sending…" : "Send Message"}
             </button>
           </form>
 

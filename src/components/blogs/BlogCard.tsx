@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import type { Post } from "../interfaces/Post";
 
-export default function BlogCard({ post }: any) {
+export default function BlogCard({ post }: { post: Post }) {
   return (
     <Link
       to={`/blogs/${post.slug}`}
@@ -19,6 +20,7 @@ export default function BlogCard({ post }: any) {
         <img
           src={post.meta.coverImage}
           alt={post.meta.title}
+          loading="lazy"
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
 
