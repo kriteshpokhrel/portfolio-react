@@ -1,56 +1,92 @@
-# My Portfolio Website
+# Kritesh Pokhrel — Portfolio & Blog
 
-This repository contains the code for my personal portfolio website built with React. The website showcases my skills, projects, and experience as a frontend and backend developer. It’s designed to be a dynamic, easy-to-navigate site for potential employers or clients to get to know me better.
+My personal portfolio and blog, built with React and Vite. It showcases who I am, what I've worked on, and hosts my writing series **AI, As I See It**. The blog is powered by Markdown files, so publishing a new post is just a matter of adding a `.md` file.
+
+**Live site:** [kriteshp.com.np](https://kriteshp.com.np)
 
 ## Features
 
-- **Home Page**: A brief introduction and summary of who I am.
-- **About Me**: Details about my background, education, and skills.
-- **Projects**: A showcase of my past and current projects with links to the repositories and repo link.
-- **Contact**: A contact form where visitors can send messages directly to me.
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices.
+- **Homepage** — introduction, about, education, experience, projects, and a contact form.
+- **Blog** — a Markdown-driven blog with individual post pages, cover images, and rich formatting (footnotes, code highlighting, and more).
+- **Client-side routing** — clean URLs like `/blogs` and `/blogs/:slug` via React Router.
+- **Responsive design** — works across desktop, tablet, and mobile.
 
-## Installation
+## Tech Stack
 
-To set up the portfolio website locally, follow the steps below.
+- **React 18** + **Vite** — app framework and build tooling
+- **React Router v7** — routing
+- **Tailwind CSS v4** — styling
+- **markdown-it** (with plugins) — Markdown rendering for blog posts
+- **react-syntax-highlighter** — code block highlighting
+- **emailjs-com** — contact form submissions
+- **Netlify** — hosting
+
+## Project Structure
+
+```
+public/               Static assets (covers, icons, _redirects)
+src/
+  App.jsx             Routes (home, blog list, blog post)
+  main.jsx            App entry
+  components/
+    homepage/         Homepage sections (About, Experience, Projects, ...)
+    blogs/            BlogList, BlogCard, BlogPostPage
+  blogs/              Blog posts as Markdown files
+  utilities/          Markdown import & rendering helpers
+```
+
+## Getting Started
 
 ### Prerequisites
 
-Make sure you have Node.js and npm installed on your machine. You can download them from [Node.js](https://nodejs.org/).
+- [Node.js](https://nodejs.org/) (LTS recommended) and npm
 
-### 1. Clone the repository
-
-Start by cloning this repository to your local machine:
-
-```bash
-git clone https://github.com/your-username/portfolio-website.git
-cd portfolio-website
-```
-
-### 2. Install dependencies
-
-Once you’ve cloned the repository, navigate to the project folder and install the necessary dependencies:
+### Install & run
 
 ```bash
 npm install
-```
-
-### 3. Run the development server
-
-Now, you can start the development server to view the website locally:
-
-```bash
 npm run dev
 ```
 
-This will start a local server at [http://localhost:5173](http://localhost:5173). Open that link in your browser to see the portfolio in action.
+The dev server runs at [http://localhost:5173](http://localhost:5173).
 
-## Customization
+### Available scripts
 
-To personalize the portfolio, follow these steps:
+| Command           | Description                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start the local development server   |
+| `npm run build`   | Build for production into `dist/`    |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint`    | Run ESLint                           |
 
-1. **Update the Content**: Go to the `src/pages` folder and modify the content for each page (About, Projects, etc.) to reflect your own details.
-2. **Change the Theme**: Update the styles in `src/styles` or modify the components in `src/components` to adjust the design to your liking.
-3. **Add Projects**: In the `Projects` section, you can add or remove project entries by editing the `src/data/projects.js` file.
+## Adding a Blog Post
 
-You can copy and paste this into your `README.md` file for your portfolio project. Don’t forget to replace the placeholder text with your actual details (e.g., GitHub username, LinkedIn profile, etc.).
+1. Create a new Markdown file in `src/blogs/`, e.g. `my-new-post.md`.
+2. Add frontmatter at the top:
+
+   ```markdown
+   ---
+   title: "My New Post"
+   date: "2026-08-07"
+   excerpt: "A short summary shown on the blog card."
+   coverImage: "/covers/my-new-post.svg"
+   ---
+
+   Your content here...
+   ```
+
+3. Drop the cover image in `public/covers/`.
+
+The post is picked up automatically and available at `/blogs/my-new-post`.
+
+## Deployment
+
+The site is deployed on **Netlify**. Because it's a single-page app, `public/_redirects` contains:
+
+```
+/*    /index.html   200
+```
+
+This makes Netlify serve `index.html` for deep links (e.g. `/blogs/some-post`) so client-side routing works on direct visits and refreshes.
+
+To deploy: push to the connected repository (Netlify builds with `npm run build` and publishes `dist/`), or run a manual deploy with the Netlify CLI.
