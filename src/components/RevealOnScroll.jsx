@@ -1,30 +1,30 @@
 import { useEffect, useRef } from "react";
-import PropTypes from "prop-types";
 
 export const RevealOnScroll = ({ children }) => {
   const ref = useRef(null);
 
   useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          ref.current.classList.add("visible");
+          node.classList.add("visible");
+          observer.unobserve(node);
         }
       },
       { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
     );
 
-    if (ref.current) observer.observe(ref.current);
+    observer.observe(node);
 
     return () => observer.disconnect();
-  });
+  }, []);
+
   return (
     <div ref={ref} className="reveal">
       {children}
     </div>
   );
-};
-
-RevealOnScroll.propTypes = {
-  children: PropTypes.node.isRequired,
 };

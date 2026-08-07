@@ -1,8 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import { renderNavLinks } from "../helpers/RenderNavigationLinks";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
+  const [activeSection, setActiveSection] = useState("home");
+
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
@@ -11,8 +13,30 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
   const isHome = location.pathname === "/";
   const isBlogs = /^\/blogs(\/.*)?$/.test(location.pathname);
 
+  // Highlight the nav link for whichever section is currently in view.
+  useEffect(() => {
+    if (!isHome) return;
+    const sections = ["home", "about", "projects", "contact"]
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setActiveSection(visible[0].target.id);
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 0.5, 1] }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, [isHome]);
+
   return (
-    <nav className="fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
+    <nav className="fixed top-0 w-full z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
 
@@ -23,18 +47,25 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
 
           {/* Mobile Menu Icon (only on home) */}
           {isHome && (
-            <div
-              className="text-2xl w-7 h-10 relative cursor-pointer z-40 md:hidden"
+            <button
+              type="button"
+              className="text-2xl w-7 h-10 relative cursor-pointer z-40 md:hidden text-white"
               onClick={() => setMenuOpen((prev) => !prev)}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
             >
               &#9776;
-            </div>
+            </button>
           )}
 
           {/* Desktop Menu */}
           {isHome && (
             <div className="hidden md:flex items-center space-x-8">
-              {renderNavLinks({ className: "text-gray-300 hover:text-white" })}
+              {renderNavLinks({
+                className: "text-gray-300 hover:text-white transition-colors",
+                activeKey: activeSection,
+              })}
             </div>
           )}
 
