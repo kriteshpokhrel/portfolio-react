@@ -1,47 +1,47 @@
 ---
 title: "Part 4 · What the New Development Process Looks Like"
 date: "2026-07-03"
-excerpt: "There is a diagram going around that shows the software lifecycle before and after AI. The coding block — once the biggest part of the process — collapses into a compressed, parallel step, while problem framing and validation grow to take its place. The shape of the work is changing."
+excerpt: "The diagram compares how time gets spent across the software lifecycle, before and after AI. In the old way, coding is the giant block in the middle. In the AI version, coding shrinks into a small parallel step and the big blocks become problem framing and validation. Here is what I make of it."
 coverImage: "/covers/new-development-process.svg"
 ---
 ***
 
 *Part 4 of **AI, As I See It**, a personal series on what AI agents are really changing about how we build software — and what they aren't.*
 
-> There is a diagram comparing the software development lifecycle before and after AI, by how time is *allocated* across it. It captures the shift this whole series has been circling better than a paragraph can, so I want to sit with it for a moment.
+> This diagram compares the software development lifecycle before and after AI — not by the steps themselves, but by how much *time* each one takes up. It says what I have been trying to say across this whole series better than my paragraphs have, so I want to slow down and walk through it.
 
 ## The Old Shape
 
-When I picture the traditional lifecycle, the blocks are lopsided in a way that feels familiar to me. Requirements and design are modest. Testing, validation, and deploy are modest. And sitting in the middle, dwarfing everything around it, is **coding**. Most of the time is spent writing code.
+Start with the traditional version. Requirements and design are small blocks. Testing and validation are a bit bigger, but still modest. Deploy is tiny. And then there is **coding**, sitting in the middle as this huge block that dwarfs everything else. The line under it says it plainly: most of the time is spent writing code.
 
-That shape is so ingrained that we built our entire sense of "productivity" around it. Faster typing, better autocomplete, more lines per day. If coding is the biggest block, shrinking it feels like the obvious win.
+We got so used to that shape that we quietly built our whole idea of "being productive" around it. Type faster. Get better autocomplete. Ship more lines in a day. If coding is the biggest block, then of course making it smaller feels like the win.
 
 ## The New Shape
 
-Now look at the AI-augmented version. The coding block does not just get smaller — it gets absorbed. **Design, coding, and testing collapse into a single compressed step that happens in parallel**, largely driven by agents.
+Now the AI-augmented version. Coding does not just get smaller — it stops being its own big block at all. Design, coding, and testing get squeezed into a single step marked **in parallel**, mostly handled by agents.
 
-What grows instead are the two ends. **Problem framing** on the front. **Validation** on the back. The bookends of the process — the parts that were always about judgment rather than typing — become the largest blocks. Deploy stays small.
+What grows instead are the two ends. **Problem framing** becomes a big block on one side. **Validation** becomes an equally big block on the other. Deploy stays tiny. The caption sums it up: the focus shifts to problem framing and validation.
 
-The center of gravity moves from the middle of the process to its edges.
+So the weight of the work slides from the middle out to the edges.
 
-## Design, Coding, Testing — In Parallel
+## Design, Coding, Testing — All At Once
 
-The most interesting detail is that little "in parallel" label. In the old model those three were sequential phases you marched through. In the new one they compress into something an agent can do concurrently: sketch a design, generate the code, produce the tests, more or less at once.
+The detail I keep coming back to is that little "in parallel" tag on the middle block. In the traditional version, design, coding, and testing were three separate stages you moved through one after another. In the AI version they are bundled into one thing an agent can do more or less at once — rough out a design, write the code, generate the tests, together.
 
-This is genuinely faster. But notice what it does — it takes the part of the process we spent decades optimizing and turns it into the *cheap* part. When the middle becomes cheap and fast, the quality of the whole system is decided almost entirely at the two ends.
+And yes, this is genuinely faster. But look at what happened: the part we spent decades trying to perfect just became the small, cheap block. Once the middle is cheap and quick, the quality of the whole thing gets decided almost entirely at the two ends.
 
-## Why the Bookends Grow
+## Why the Ends Get Bigger
 
-This is not an accident, and it is not overhead. It took me a while to see it, but this is where the engineering moved.
+This is not wasted time and it is not red tape. It took me a while to really get this, but this is where the engineering quietly went.
 
-**Problem framing grows** because a fast agent pointed at a poorly-framed problem just produces the wrong thing faster. The value of getting the problem right goes up precisely when execution gets cheap.
+**Getting the problem right matters more** because a fast agent aimed at a fuzzy problem just builds the wrong thing, faster. The clearer you are up front, the more you get back — and that only becomes more true as the building gets cheaper.
 
-**Validation grows** because you are now reviewing far more generated code than you used to write by hand. As I argued earlier in this series, the constraint moves to the human who has to confirm the work is correct. The diagram is just that argument drawn as boxes.
+**Checking the work matters more** because now you are reading way more generated code than you would ever have written by hand. Like I said earlier in this series, the bottleneck moves to the person who has to say "yes, this is actually right." The diagram is just that same idea, drawn as boxes.
 
-## What It Means for the Work
+## What This Means for the Job
 
-If this is the shape of things, then "getting faster at coding" is optimizing the block that is disappearing. The skills that compound are the ones at the edges: framing problems precisely, writing specifications an agent can execute against, and validating output you did not personally type.
+If this is really the shape of things, then "getting faster at coding" is polishing the block that is on its way out. The skills that actually add up are the ones at the edges: framing a problem clearly, writing it down well enough that an agent can run with it, and being able to check work you did not type yourself.
 
-None of this is a demotion of engineering. It is a relocation of it. The work did not shrink — it moved to the parts of the process that were always the hardest to automate, because they were never really about the code.
+None of this means engineering matters less. It just moved. The work did not shrink — it slid over to the parts that were always the hardest to hand off, because they were never really about the code.
 
 ---
