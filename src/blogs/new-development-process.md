@@ -18,7 +18,7 @@ We got so used to that shape that we quietly built our whole idea of "being prod
 
 ## The New Shape
 
-Now the AI-augmented version. Coding does not just get smaller.It stops being its own big block at all. Design, coding, and testing get squeezed into a single step marked **in parallel**, mostly handled by agents.
+Now the AI-augmented version. Coding does not just get smaller. It stops being its own big block at all. Design, coding, and testing get squeezed into a single step marked **in parallel**, mostly handled by agents.
 
 What grows instead are the two ends. **Problem framing** becomes a big block on one side. **Validation** becomes an equally big block on the other. Deploy stays tiny. The caption says it simply. The focus moves to problem framing and validation.
 
