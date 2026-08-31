@@ -34,7 +34,7 @@ export default function BlogPostPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-neutral-900 text-white gap-4">
         <Seo title="Blog not found" noindex />
-        <p className="text-2xl font-semibold">404 — Blog not found</p>
+        <p className="text-2xl font-semibold">404 - Blog not found</p>
         <button
           onClick={() => navigate("/blogs")}
           className="px-4 py-2 text-sm rounded-lg bg-neutral-700 hover:bg-neutral-600 cursor-pointer"
@@ -46,7 +46,7 @@ export default function BlogPostPage() {
   }
 
   const excerpt =
-    post.meta.excerpt || post.content.replace(/[#>*_`~-]/g, "").slice(0, 160).trim() + "…";
+    post.meta.excerpt || post.content.replace(/[#>*_`~-]/g, "").slice(0, 160).trim() + "...";
   const formattedDate = new Date(post.meta.date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",

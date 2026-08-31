@@ -1,24 +1,29 @@
-const frontendSkills = ["Angular", "Redux", "PWA", "TypeScript"];
+const frontendSkills = ["React", "Angular", "NgRx", "TypeScript", "JavaScript", "HTML", "CSS"];
 const additionalSkills = [
-    "Azure",
-    "React",
-    "Next.js",
+    "Microsoft Azure",
+    "Azure DevOps",
+    "Terraform",
+    "PowerShell",
+    "CI/CD",
+    "Infrastructure as Code",
+    "Grafana",
     "Octopus Deploy",
-    "Python",
-    "Java",
-    "Firebase",
-    "TensorFlow",
-    "Data Visualization",
-    "SpecFlow",
-    'Grafana',
+    "AI Agents",
+    "LLMs",
+    "MCP",
+    "GitHub Copilot",
+    "Claude",
+    "Ollama",
   ];
 
 const backendSkills = [
     "C#",
-    "ASP .Net",
+    "ASP.NET Core",
+    "REST APIs",
     "Microservices",
-    "MySQL",
-    "SQL Server",
+    "PostgreSQL",
+    "MSSQL",
+    "SQL",
   ];
 
 export const Summary = () => {
@@ -30,12 +35,13 @@ export const Summary = () => {
 
           <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
             <p className="text-gray-300 mb-6">
-              Passionate Software Developer with a strong interest in scalable
-              architecture, system design & performance optimization. Skilled in
-              full-stack development, automation, and debugging.
+              I&apos;m a software engineer with 4 years of experience in .NET, cloud
+              modernization, and cloud-native development on Azure. I build scalable
+              back-end services with C#, ASP.NET Core, REST APIs, and microservices,
+              and front ends with React and Angular.
               <br />
-              Focused on writing clean, maintainable code and continuously
-              improving through learning and best practices.
+              Lately I&apos;ve been working a lot with AI agents and LLM-based tools to
+              improve how our team builds and ships software.
             </p>
 
             {/* First row */}
@@ -76,7 +82,7 @@ export const Summary = () => {
             {/* Download Resume */}
             <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
               <div className="rounded-xl p-2 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Additional Skills</h3>
+                <h3 className="text-xl font-bold mb-4"> Cloud, DevOps & AI</h3>
                 <div className="flex flex-wrap gap-2">
                   {additionalSkills.map((tech, key) => (
                     <span

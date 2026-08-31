@@ -17,7 +17,7 @@ export const Education = () => {
                     B.E. in Computer Science & Engineering
                 </h4>
                     <p className="text-sm text-blue-400">
-                        Visvesvaraya Technological University | 2018–2022
+                        Visvesvaraya Technological University | 2018 – 2022
                     </p>
             </div>
 

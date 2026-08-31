@@ -16,9 +16,10 @@ export const Introduction = () => {
                         </h1>
 
                         <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
-                            I&apos;m a full-stack developer who loves crafting clean, scalable web
-                            applications. My goal is to build solutions that offer both
-                            exceptional performance and a delightful user experience.
+                            I&apos;m a software engineer with around 4 years of experience building
+                            .NET and cloud-native applications on Azure. I work across the stack with
+                            C#, ASP.NET Core, React, and Angular, and lately I spend a lot of my time
+                            on cloud modernization and AI-assisted development.
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-3">
@@ -40,7 +41,7 @@ export const Introduction = () => {
                                 to="/blogs"
                                 className="border border-cyan-400/50 text-cyan-400 py-2 px-4 sm:py-3 sm:px-6 rounded font-medium text-sm sm:text-base transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] hover:bg-cyan-400/10"
                             >
-                                Read my writing ✍️
+                                Read my writings
                             </Link>
                         </div>
 

@@ -28,7 +28,7 @@ export const Contact = () => {
       .then(() => {
         setStatusMessage({
           type: "success",
-          text: "✅ Message sent successfully!",
+          text: "Message sent successfully!",
         });
         setFormData({
           name: "",
@@ -42,7 +42,7 @@ export const Contact = () => {
       .catch(() => {
         setStatusMessage({
           type: "error",
-          text: "❌ Oops! Something went wrong. Please try again.",
+          text: "Something went wrong. Please try again.",
         });
 
         setTimeout(() => setStatusMessage({ type: "", text: "" }), 5000);
@@ -61,7 +61,7 @@ export const Contact = () => {
             Get In Touch
           </h2>
 
-          {/* ✉️ Status Message */}
+          {/* Status Message */}
           {statusMessage.text && (
             <div
               className={`mb-6 px-4 py-3 rounded text-sm text-center transition duration-300 ${statusMessage.type === "success"
@@ -154,11 +154,11 @@ export const Contact = () => {
               disabled={isSending}
               className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
             >
-              {isSending ? "Sending…" : "Send Message"}
+              {isSending ? "Sending..." : "Send Message"}
             </button>
           </form>
 
-          {/* 🌐 Social Links */}
+          {/* Social Links */}
           <div className="mt-10 flex justify-center gap-6">
             <a
               href="https://github.com/kriteshpokhrel"

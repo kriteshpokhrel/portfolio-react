@@ -1,9 +1,9 @@
 // Central place for site-wide SEO/metadata defaults.
 export const siteConfig = {
   name: "Kritesh Pokhrel",
-  title: "Kritesh Pokhrel — Full-Stack Developer & Writer",
+  title: "Kritesh Pokhrel - Software Engineer",
   description:
-    "Portfolio and blog of Kritesh Pokhrel, a full-stack software engineer. Home of the writing series 'AI, As I See It'.",
+    "Portfolio and blog of Kritesh Pokhrel, a software engineer focused on .NET, Azure, and cloud-native development. Home of the writing series 'AI, As I See It'.",
   url: "https://kriteshp.com.np",
   author: "Kritesh Pokhrel",
   // Absolute default social share image (used when a page has no cover).
