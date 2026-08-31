@@ -12,7 +12,7 @@ const personJsonLd = {
   "@type": "Person",
   name: siteConfig.author,
   url: siteConfig.url,
-  jobTitle: "Full-Stack Software Engineer",
+  jobTitle: "Software Engineer",
   image: absoluteUrl("/kritesh.jpg"),
   sameAs: [
     "https://github.com/kriteshpokhrel",

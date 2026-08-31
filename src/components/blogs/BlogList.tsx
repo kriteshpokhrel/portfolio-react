@@ -64,7 +64,7 @@ export default function BlogList() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "Blog Space — Kritesh Pokhrel",
+    name: "Blog Space - Kritesh Pokhrel",
     url: absoluteUrl("/blogs"),
     blogPost: posts.map((post) => ({
       "@type": "BlogPosting",
@@ -103,7 +103,7 @@ export default function BlogList() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={(e) => e.key === "Escape" && closeSearch()}
-                placeholder="Search posts…"
+                placeholder="Search posts..."
                 aria-hidden={!searchOpen}
                 tabIndex={searchOpen ? 0 : -1}
                 className={`bg-white/5 rounded-full text-sm text-white transition-all duration-300 focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 ${

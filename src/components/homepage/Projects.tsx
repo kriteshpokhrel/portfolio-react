@@ -57,7 +57,7 @@ const ProjectCard = ({ project }: { project: Project }) => (
         target="_blank"
         className="text-blue-400 hover:text-blue-300 transition-colors my-4"
       >
-        View Repo →
+        View Repo
       </a>)}
     </div>
   </div>

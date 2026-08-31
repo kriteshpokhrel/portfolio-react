@@ -26,7 +26,7 @@ export const Seo = ({
   jsonLd,
   noindex = false,
 }: SeoProps) => {
-  const fullTitle = title ? `${title} — ${siteConfig.name}` : siteConfig.title;
+  const fullTitle = title ? `${title} - ${siteConfig.name}` : siteConfig.title;
   const canonical = absoluteUrl(path);
   const shareImage = absoluteUrl(image) || siteConfig.defaultImage;
 

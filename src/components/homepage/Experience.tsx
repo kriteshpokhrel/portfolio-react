@@ -1,20 +1,28 @@
 const eurofinsTechnologies = [
     "Angular",
-    "C#",
+    "NgRx",
     "TypeScript",
-    "ASP .NET",
+    "PWA",
+    "C#",
+    ".NET",
     "Microservices",
-    "Jasmine & Karma",
-    "Azure",
-    "Octopus Deploy",
-    "Grafana",
+    "MSSQL",
+    "NUnit",
+    "Azure DevOps",
 ];
 
 const quickfoxTechnologies = [
+    "C#",
     ".NET",
+    "ASP.NET Core",
     "Azure",
-    "SQL Server",
+    "REST APIs",
     "Microservices",
+    "PostgreSQL",
+    "Terraform",
+    "Azure DevOps",
+    "AI Agents",
+    "GitHub Copilot",
 ];
 
 const TimelineItem = ({
@@ -73,7 +81,7 @@ const TimelineItem = ({
 export const Experience = () => {
     return (
         <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 transition-all">
-            <h3 className="text-xl font-bold mb-6"> 💼 Work Experience </h3>
+            <h3 className="text-xl font-bold mb-6">Work Experience</h3>
 
             <div className="relative mt-10">
                 {/* Vertical line */}
@@ -84,8 +92,8 @@ export const Experience = () => {
                     <TimelineItem
                         company="QuickFox Consulting"
                         role="Software Engineer"
-                        duration="2025 - Present"
-                        description="Building scalable backend systems using .NET, Azure, and microservices, with SQL-based data stores for reliability and performance."
+                        duration="Dec 2025 - Present"
+                        description="Building .NET and ASP.NET Core applications and REST APIs with C#, following Clean Architecture and SOLID principles. Designing cloud-native systems on Azure and building AI coding agents and developer workflows to improve how the team builds and ships software."
                         technologies={quickfoxTechnologies}
                         isCurrent
                     />
@@ -94,8 +102,8 @@ export const Experience = () => {
                     <TimelineItem
                         company="Eurofins IT Solutions India Pvt Ltd"
                         role="Software Engineer"
-                        duration="2022 – 2025"
-                        description="Full-stack developer on the Off-site Management platform, delivering a PWA for field operators and scalable backend microservices."
+                        duration="Aug 2022 - Sep 2025"
+                        description="Worked full-stack on the Off Site Management platform. Built REST APIs and microservices in C# and .NET, and delivered an Angular PWA for offline field sample collection. Optimized the sync and parcel modules, cutting execution times by about 85%."
                         technologies={eurofinsTechnologies}
                     />
                 </div>
