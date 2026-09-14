@@ -1,8 +1,8 @@
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { renderNavLinks } from "../helpers/RenderNavigationLinks";
-import { useEffect, useState } from "react";
 
-export const Navbar = ({ menuOpen, setMenuOpen }) => {
+export const Navbar = ({ menuOpen, setMenuOpen, hasTopBanner = false }) => {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
@@ -36,7 +36,10 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
   }, [isHome]);
 
   return (
-    <nav className="fixed top-0 w-full z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
+    <nav
+      className={`fixed w-full z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg transition-[top] duration-300 ${hasTopBanner ? "top-[2.25rem]" : "top-0"
+        }`}
+    >
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
 
