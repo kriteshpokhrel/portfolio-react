@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
+:root {
+  --site-top-offset: 5rem;
+}
+
 html {
   scroll-behavior: smooth;
   /* Offset anchor jumps so section headings clear the fixed navbar. */
-  scroll-padding-top: 5rem;
+  scroll-padding-top: var(--site-top-offset);
 }
 
 html,
@@ -62,7 +66,7 @@ body {
 
 /* Offset heading anchor jumps (TOC links) below the fixed navbar. */
 .markdown-body :is(h1, h2, h3, h4, h5, h6) {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: var(--site-top-offset);
 }
 
 .reveal {
