@@ -11,6 +11,7 @@ const BASE_URL = "https://kriteshp.com.np";
 const staticRoutes = [
   { loc: "/", priority: "1.0" },
   { loc: "/blogs", priority: "0.8" },
+  { loc: "/guestbook", priority: "0.7" },
 ];
 
 const blogsDir = join(root, "src", "blogs");

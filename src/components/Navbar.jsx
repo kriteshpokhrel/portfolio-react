@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { renderNavLinks } from "../helpers/RenderNavigationLinks";
+import { useGuestbookModal } from "./guestbook/guestbookModalState";
 
 export const Navbar = ({ menuOpen, setMenuOpen, hasTopBanner = false }) => {
   const [activeSection, setActiveSection] = useState("home");
+  const { openGuestbook } = useGuestbookModal();
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   const location = useLocation();
   const isHome = location.pathname === "/";
   const isBlogs = /^\/blogs(\/.*)?$/.test(location.pathname);
+  const isGuestbook = location.pathname === "/guestbook";
 
   // Highlight the nav link for whichever section is currently in view.
   useEffect(() => {
@@ -48,36 +54,26 @@ export const Navbar = ({ menuOpen, setMenuOpen, hasTopBanner = false }) => {
             kritesh<span className="text-blue-500">.pokhrel</span>
           </Link>
 
-          {/* Mobile Menu Icon (only on home) */}
-          {isHome && (
-            <button
-              type="button"
-              className="text-2xl w-7 h-10 relative cursor-pointer z-40 md:hidden text-white"
-              onClick={() => setMenuOpen((prev) => !prev)}
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={menuOpen}
-              aria-controls="mobile-menu"
-            >
-              &#9776;
-            </button>
-          )}
+          <button
+            type="button"
+            className="text-2xl w-7 h-10 relative cursor-pointer z-40 md:hidden text-white"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+          >
+            &#9776;
+          </button>
 
           {/* Desktop Menu */}
-          {isHome && (
-            <div className="hidden md:flex items-center space-x-8">
-              {renderNavLinks({
-                className: "text-gray-300 hover:text-white transition-colors",
-                activeKey: activeSection,
-              })}
-            </div>
-          )}
-
-          {/* Blogs Page Home Button */}
-          {isBlogs && (
-            <div className="flex items-center">
-              <Link to="/">Home</Link>
-            </div>
-          )}
+          <div className="hidden md:flex items-center space-x-6">
+            {renderNavLinks({
+              className: "text-sm text-gray-300 hover:text-white transition-colors",
+              activeKey: isHome ? activeSection : isBlogs ? "blogs" : isGuestbook ? "guestbook" : undefined,
+              isHome,
+              onGuestbookClick: () => openGuestbook(),
+            })}
+          </div>
 
         </div>
       </div>

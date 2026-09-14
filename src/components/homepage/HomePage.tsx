@@ -6,6 +6,7 @@ import { useState } from "react";
 import { LoadingScreen } from "../LoadingScreen";
 import { Seo } from "../Seo";
 import { siteConfig, absoluteUrl } from "../../utilities/siteConfig";
+import { GuestbookTeaser } from "./GuestbookTeaser";
 
 const personJsonLd = {
   "@context": "https://schema.org",
@@ -43,6 +44,7 @@ export const HomePage = () => {
         <Introduction />
         <About />
         <Projects />
+        <GuestbookTeaser />
         <Contact />
       </div>
     </>

@@ -7,9 +7,11 @@ import { Footer } from "./components/Footer";
 import { NotFound } from "./components/NotFound";
 import "./index.css";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { GuestbookModalProvider } from "./components/guestbook/GuestbookModalContext";
 
 const BlogList = lazy(() => import("./components/blogs/BlogList"));
 const BlogPostPage = lazy(() => import("./components/blogs/BlogPostPage"));
+const GuestbookPage = lazy(() => import("./components/guestbook/GuestbookPage"));
 const reliefBannerEnabled = import.meta.env.VITE_SHOW_RELIEF_BANNER !== "false";
 
 const RouteFallback = () => (
@@ -103,8 +105,7 @@ const ReliefBanner = ({ onDismiss }) => {
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showReliefBanner, setShowReliefBanner] = useState(true);
-  const { pathname } = useLocation();
-  const isHome = pathname === "/";
+  const { pathname, hash } = useLocation();
   const displayReliefBanner = reliefBannerEnabled && showReliefBanner;
 
   useEffect(() => {
@@ -118,12 +119,21 @@ function App() {
     };
   }, [displayReliefBanner]);
 
+  useEffect(() => {
+    setMenuOpen(false);
+    if (hash) {
+      requestAnimationFrame(() => document.getElementById(hash.slice(1))?.scrollIntoView());
+    } else {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+  }, [pathname, hash]);
+
   const dismissReliefBanner = () => {
     setShowReliefBanner(false);
   };
 
   return (
-    <>
+    <GuestbookModalProvider>
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-blue-500 focus:text-white focus:px-4 focus:py-2 focus:rounded"
@@ -136,25 +146,24 @@ function App() {
         setMenuOpen={setMenuOpen}
         hasTopBanner={displayReliefBanner}
       />
-      {isHome && (
-        <MobileMenu
-          menuOpen={menuOpen}
-          setMenuOpen={setMenuOpen}
-          hasTopBanner={displayReliefBanner}
-        />
-      )}
+      <MobileMenu
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        hasTopBanner={displayReliefBanner}
+      />
       <main id="main-content">
         <Suspense fallback={<RouteFallback />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/blogs" element={<BlogList />} />
             <Route path="/blogs/:slug" element={<BlogPostPage />} />
+            <Route path="/guestbook" element={<GuestbookPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
       <Footer />
-    </>
+    </GuestbookModalProvider>
   );
 }
 

@@ -7,6 +7,7 @@ export const navItems = [
     { key: "projects", label: "Projects", href: "#projects" },
     { key: "contact", label: "Contact", href: "#contact" },
     { key: "blogs", label: "Blogs", to: "/blogs" },
+    { key: "guestbook", label: "Guestbook", to: "/guestbook" },
 ];
 
 /**
@@ -19,11 +20,15 @@ export function renderNavLinks({
     className = "",
     onClick,
     activeKey,
+    isHome = true,
+    onGuestbookClick,
     activeClassName = "text-white font-semibold",
 }: {
     className?: string;
     onClick?: React.MouseEventHandler;
     activeKey?: string;
+    isHome?: boolean;
+    onGuestbookClick?: React.MouseEventHandler<HTMLButtonElement>;
     activeClassName?: string;
 } = {}) {
     return navItems.map((item) => {
@@ -34,9 +39,26 @@ export function renderNavLinks({
             onClick,
         };
 
-        if (item.to) {
+        if (item.key === "guestbook" && onGuestbookClick) {
             return (
-                <Link key={item.key} {...commonProps} to={item.to} >
+                <button
+                    key={item.key}
+                    type="button"
+                    className={`${cls} cursor-pointer`}
+                    onClick={(event) => {
+                        onClick?.(event);
+                        onGuestbookClick(event);
+                    }}
+                    aria-current={isActive ? "page" : undefined}
+                >
+                    {item.label}
+                </button>
+            );
+        }
+
+        if (item.to || !isHome) {
+            return (
+            <Link key={item.key} {...commonProps} to={item.to ?? `/${item.href}`} aria-current={isActive ? "page" : undefined}>
                     {item.label}
                 </Link>
             );

@@ -41,6 +41,22 @@
     <title>Kritesh Pokhrel — Full-Stack Developer & Writer</title>
   </head>
   <body>
+    <form name="guestbook-entry" data-netlify="true" netlify-honeypot="website" hidden>
+      <input type="hidden" name="form-name" value="guestbook-entry" />
+      <input name="name" />
+      <textarea name="message"></textarea>
+      <textarea name="drawing"></textarea>
+      <input name="visitorId" />
+      <input name="website" />
+    </form>
+    <form name="guestbook-report" data-netlify="true" netlify-honeypot="website" hidden>
+      <input type="hidden" name="form-name" value="guestbook-report" />
+      <input name="entryId" />
+      <input name="reason" />
+      <textarea name="details"></textarea>
+      <input name="visitorId" />
+      <input name="website" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
